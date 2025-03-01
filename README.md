@@ -25,8 +25,8 @@ Tailwind CSS – Utility-first CSS framework
 
 1. Clone the repository:
 
-git clone <repo-url>
-cd <project-folder>
+git clone [<repo-url>](https://github.com/ibrahimMansour3010/simpleTask)
+cd simpleTask
 
 
 2. Install dependencies:
