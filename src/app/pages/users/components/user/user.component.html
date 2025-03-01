@@ -1,0 +1,74 @@
+<div class="font-semibold text-xl mb-4">User List</div>
+<p-table #dt1 [value]="users" dataKey="id" [rows]="10" [loading]="loading" [rowHover]="true" [showGridlines]="true" [paginator]="true" [globalFilterFields]="['name','email','companyName']" responsiveLayout="scroll" sortMode="single">
+    <ng-template #caption>
+        <div class="flex justify-between items-center flex-column sm:flex-row">
+            <p-iconfield iconPosition="left" class="ml-auto">
+                <p-inputicon>
+                    <i class="pi pi-search"></i>
+                </p-inputicon>
+                <input pInputText type="text" (input)="onGlobalFilter(dt1, $event)" placeholder="Search keyword" />
+            </p-iconfield>
+        </div>
+    </ng-template>
+    <ng-template #header>
+        <tr>
+            <th style="min-width: 12rem" pSortableColumn="name">
+                <div class="flex justify-between items-center">
+                    Name
+                    <p-sortIcon field="name"></p-sortIcon>
+                </div>
+            </th>
+            <th style="min-width: 12rem" pSortableColumn="name">
+                <div class="flex justify-between items-center">
+                    Email
+                    <p-sortIcon field="email"></p-sortIcon>
+                </div>
+            </th>
+            <th style="min-width: 12rem" pSortableColumn="name">
+                <div class="flex justify-between items-center">
+                    Company Name
+                    <p-sortIcon field="companyName"></p-sortIcon>
+                </div>
+            </th>
+            <th style="min-width: 12rem;text-align: center" >
+                <div class="flex justify-center items-center">
+                    Actions
+                </div>
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template #body let-user>
+        <tr>
+            <td>
+                {{ user.name }}
+            </td>
+            <td>
+                {{ user.email }}
+            </td>
+            <td>
+                {{ user.companyName }}
+            </td>
+            <td style="text-align: center">
+                <i (click)="openDetails(user.id)" style="cursor: pointer; "  class='pi pi-eye'></i>
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template #emptymessage>
+        <tr>
+            <td colspan="8">No customers found.</td>
+        </tr>
+    </ng-template>
+    <ng-template #loadingbody>
+        <tr>
+            <td colspan="8">Loading customers data. Please wait.</td>
+        </tr>
+    </ng-template>
+</p-table>
+
+
+<p-dialog header="User Details" [modal]="true" *ngIf="showDetails && userId>0" [(visible)]="showDetails" [style]="{ width: '75rem' }">
+        <app-user-details *ngIf="userId>0" [userId]="userId" />
+    <div class="flex justify-end gap-2">
+        <p-button label="Cancel" severity="secondary" (click)="showDetails = false" />
+    </div>
+</p-dialog>

@@ -1,0 +1,98 @@
+<table >
+    <tr>
+        <td>
+            <div class="mb-4">
+                <h3>Basic Information</h3>
+                <div class="flex flex-wrap gap-4">
+                    <div class="w-1/2 flex items-center gap-2">
+                        <label for="id" class="font-semibold w-24">ID: </label>
+                        <div>{{ userInfo?.id }}</div>
+                    </div>
+                    <div class="w-1/2 flex items-center gap-2">
+                        <label for="name" class="font-semibold w-24">Name: </label>
+                        <div>{{ userInfo?.name }}</div>
+                    </div>
+                    <div class="w-1/2 flex items-center gap-2">
+                        <label for="username" class="font-semibold w-24">Username: </label>
+                        <div>{{ userInfo?.username }}</div>
+                    </div>
+                    <div class="w-1/2 flex items-center gap-2">
+                        <label for="email" class="font-semibold w-24">Email: </label>
+                        <div>{{ userInfo?.email }}</div>
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="mb-4" >
+                <h3>Address Information</h3>
+                <div class="flex flex-wrap gap-4">
+                    <div class="w-1/2 flex items-center gap-2">
+                        <label for="street" class="font-semibold w-24">Street: </label>
+                        <div>{{ userInfo?.address?.street }}</div>
+                    </div>
+                    <div class="w-1/2 flex items-center gap-2">
+                        <label for="suite" class="font-semibold w-24">Suite: </label>
+                        <div>{{ userInfo?.address?.suite }}</div>
+                    </div>
+                    <div class="w-1/2 flex items-center gap-2">
+                        <label for="city" class="font-semibold w-24">City: </label>
+                        <div>{{ userInfo?.address?.city }}</div>
+                    </div>
+                    <div class="w-1/2 flex items-center gap-2">
+                        <label for="zipcode" class="font-semibold w-24">Zipcode: </label>
+                        <div>{{ userInfo?.address?.zipcode }}</div>
+                    </div>
+                    <div class="w-1/2 flex items-center gap-2" >
+                        <label for="lat" class="font-semibold w-24">Latitude: </label>
+                        <div>{{ userInfo?.address?.geo?.lat }}</div>
+                    </div>
+                    <div class="w-1/2 flex items-center gap-2" >
+                        <label for="lng" class="font-semibold w-24">Longitude: </label>
+                        <div>{{ userInfo?.address?.geo?.lng }}</div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="mb-4">
+                <h3>Contact Information</h3>
+                <div class="flex flex-wrap gap-4">
+                    <div class="w-1/2 flex items-center gap-2">
+                        <label for="phone" class="font-semibold w-24">Phone: </label>
+                        <div>{{ userInfo?.phone }}</div>
+                    </div>
+                    <div class="w-1/2 flex items-center gap-2">
+                        <label for="website" class="font-semibold w-24">Website: </label>
+                        <div>{{ userInfo?.website }}</div>
+                    </div>
+                    <div class="w-1/2 flex items-center gap-2"></div>
+                    <div class="w-1/2 flex items-center gap-2"></div>
+                    <div class="w-1/2 flex items-center gap-2"></div>
+                    <div class="w-1/2 flex items-center gap-2"></div>
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="mb-4" >
+                <h3>Company Information</h3>
+                <div class="flex flex-wrap gap-4">
+                    <div class="w-1/2 flex items-center gap-2">
+                        <label for="companyName" class="font-semibold w-24">Company Name: </label>
+                        <div>{{ userInfo?.company?.name }}</div>
+                    </div>
+                    <div class="w-1/2 flex items-center gap-2">
+                        <label for="catchPhrase" class="font-semibold w-24">Catch Phrase: </label>
+                        <div>{{ userInfo?.company?.catchPhrase }}</div>
+                    </div>
+                    <div class="w-1/2 flex items-center gap-2">
+                        <label for="bs" class="font-semibold w-24">BS: </label>
+                        <div>{{ userInfo?.company?.bs }}</div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
